@@ -26,7 +26,7 @@ Phenom:NewButton("Loompic aimbot gui", "Code 700SubcribersSoon click f when past
 
 end)
 
-Phenom:NewButton("Lose Left Leg", "U losee ur", function()
+Phenom:NewButton("Lose Left Leg", "U losee ur leg", function()
     
 local BodyPart = "Left Leg"
 local Player = game:GetService("Players").LocalPlayer
@@ -35,7 +35,7 @@ local Character = Player.Character
 Character[BodyPart]:Destroy()
 end)
 
-Phenom:NewButton("Lose Right Leg", "ButtonInfo", function()
+Phenom:NewButton("Lose Left Leg", "u lose ur leg lol", function()
     
 local BodyPart = "Right Leg"
 local Player = game:GetService("Players").LocalPlayer
