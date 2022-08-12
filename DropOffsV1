@@ -4,7 +4,8 @@ local Window = Library.CreateLib("Basketball Gui V1 | Made by vaultzx", "Synapse
 --Phenom--
 local Phenom = Window:NewTab("Phenom")
 local Phenom = Phenom:NewSection("Player")
-Phenom:NewSlider("Walkspeed", "Change your speed", 200, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+
+Phenom:NewSlider("Walkspeed", "Change your speed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValues)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
@@ -14,9 +15,9 @@ end)
 
 Phenom:NewToggle("Reset WS/JP", "Resets all powers to default", function(state)
     if state then
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-       game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-       end
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+ end
 end)
 --Scripts for phenom--
 Phenom:NewLabel("Scripts")
@@ -35,7 +36,12 @@ Character[BodyPart]:Destroy()
 end)
 
 Phenom:NewButton("Lose Right Leg", "ButtonInfo", function()
-    print("Clicked")
+    
+local BodyPart = "Right Leg"
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character
+
+Character[BodyPart]:Destroy()
 end)
 
 --drop offs--
@@ -48,9 +54,9 @@ DropOffsSection:NewButton("No steal", "Cant get the ball stolen", function()
 game:GetService("UserInputService").InputBegan:Connect(function(key, gpe)
    if not gpe and key.KeyCode == Enum.KeyCode.Y then
        for i,v in pairs(plr.Character.Ball:GetChildren()) do
-           local new = Instance.new("Folder")
-           new.Parent = plr.Character.Ball
-           new.Name = "TouchInterest"
+          local new = Instance.new("Folder")
+          new.Parent = plr.Character.Ball
+       new.Name = "TouchInterest"
 
            plr.Character.Ball:FindFirstChildOfClass("TouchTransmitter"):Destroy()
        end
