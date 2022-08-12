@@ -35,7 +35,7 @@ local Character = Player.Character
 Character[BodyPart]:Destroy()
 end)
 
-Phenom:NewButton("Lose Left Leg", "u lose ur leg lol", function()
+Phenom:NewButton("Lose Right Leg", "u lose ur leg lol", function()
     
 local BodyPart = "Right Leg"
 local Player = game:GetService("Players").LocalPlayer
